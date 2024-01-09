@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_share_with_token
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-09 08:42+0000\n"
+"PO-Revision-Date: 2024-01-09 08:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: knowledge_share_with_token
+#: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
+msgid "<i class=\"fa fa-globe fa-2x\" title=\"Share to web\"/>"
+msgstr ""
+
+#. module: knowledge_share_with_token
+#: model:ir.model.fields,field_description:knowledge_share_with_token.field_knowledge_article__access_token
+msgid "Access Token"
+msgstr ""
+
+#. module: knowledge_share_with_token
+#: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
+msgid "Anyone can view using token"
+msgstr ""
+
+#. module: knowledge_share_with_token
+#: model:ir.model.fields,field_description:knowledge_share_with_token.field_knowledge_article__token_article_url
+msgid "Article URL"
+msgstr ""
+
+#. module: knowledge_share_with_token
+#: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
+msgid "Article published with token"
+msgstr ""
+
+#. module: knowledge_share_with_token
+#: model:ir.model,name:knowledge_share_with_token.model_knowledge_article
+msgid "Knowledge Article"
+msgstr "Kennisartikel"
+
+#. module: knowledge_share_with_token
+#: model:ir.model.fields,field_description:knowledge_share_with_token.field_knowledge_article__share_with_token
+#: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
+msgid "Share with token"
+msgstr ""
+
+#. module: knowledge_share_with_token
+#: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
+msgid "Shared with token"
+msgstr ""
