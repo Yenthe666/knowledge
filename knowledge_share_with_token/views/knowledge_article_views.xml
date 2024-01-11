@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="knowledge.knowledge_article_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('dropdown-divider')]" position="before">
-                <div class="d-flex px-3" attrs="{'invisible': [('website_published', '=', False)]}"
+                <div class="d-flex px-3"
                      t-on-click="ev => ev.currentTarget.querySelector('.o_knowledge_share_toggle input')?.click()">
                     <div class="o_knowledge_share_panel_icon align-self-center d-flex justify-content-center align-items-center flex-shrink-0">
                         <i class="fa fa-globe fa-2x" title="Share to web"/>
@@ -25,7 +25,7 @@
                         <field name="share_with_token" widget="boolean_toggle"/>
                     </div>
                 </div>
-                <div class="px-3 my-2" attrs="{'invisible': [('share_with_token', '=', False),('website_published', '=', False)]}">
+                <div class="px-3 my-2" attrs="{'invisible': [('share_with_token', '=', False)]}">
                     <field name="token_article_url" widget="CopyClipboardChar" readonly="1"/>
                 </div>
             </xpath>

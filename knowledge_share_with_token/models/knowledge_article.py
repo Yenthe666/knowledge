@@ -1,6 +1,6 @@
 import uuid
 from werkzeug.urls import url_join
-from odoo import fields, models, _
+from odoo import fields, models, api, _
 from odoo.tools import consteq
 
 
@@ -51,4 +51,13 @@ class KnowledgeArticle(models.Model):
             if not article.ids:
                 article.token_article_url = False
             else:
-                article.token_article_url = url_join(article.get_base_url(), 'knowledge/article/%s?access_token=%s' % (article.id, article.access_token))
+                article.token_article_url = url_join(article.get_base_url(), 'knowledge/article/%s/%s' % (article.id, article.access_token))
+
+    @api.onchange('share_with_token')
+    def _onchange_share_with_token(self):
+        for knowledge in self:
+                knowledge.update({
+                    "website_published": False
+                })
+
+
