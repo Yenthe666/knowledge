@@ -23,22 +23,22 @@ msgstr ""
 #. module: knowledge_share_with_token
 #: model:ir.model.fields,field_description:knowledge_share_with_token.field_knowledge_article__access_token
 msgid "Access Token"
-msgstr ""
+msgstr "Toegangstoken"
 
 #. module: knowledge_share_with_token
 #: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
 msgid "Anyone can view using token"
-msgstr ""
+msgstr "Iedereen kan bekijken met token"
 
 #. module: knowledge_share_with_token
 #: model:ir.model.fields,field_description:knowledge_share_with_token.field_knowledge_article__token_article_url
 msgid "Article URL"
-msgstr ""
+msgstr "URL artikel"
 
 #. module: knowledge_share_with_token
 #: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
 msgid "Article published with token"
-msgstr ""
+msgstr "Artikel gepubliceerd met token"
 
 #. module: knowledge_share_with_token
 #: model:ir.model,name:knowledge_share_with_token.model_knowledge_article
@@ -49,9 +49,9 @@ msgstr "Kennisartikel"
 #: model:ir.model.fields,field_description:knowledge_share_with_token.field_knowledge_article__share_with_token
 #: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
 msgid "Share with token"
-msgstr ""
+msgstr "Delen met token"
 
 #. module: knowledge_share_with_token
 #: model_terms:ir.ui.view,arch_db:knowledge_share_with_token.knowledge_article_view_form
 msgid "Shared with token"
-msgstr ""
+msgstr "Gedeeld met token"
