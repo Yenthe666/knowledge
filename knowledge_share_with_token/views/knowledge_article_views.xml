@@ -1,0 +1,34 @@
+<odoo>
+    <record id="knowledge_article_view_form" model="ir.ui.view">
+        <field name="name">knowledge.article.view.form.inherit.website</field>
+        <field name="model">knowledge.article</field>
+        <field name="inherit_id" ref="knowledge.knowledge_article_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('dropdown-divider')]" position="before">
+                <div class="d-flex px-3"
+                     t-on-click="ev => ev.currentTarget.querySelector('.o_knowledge_share_toggle input')?.click()">
+                    <div class="o_knowledge_share_panel_icon align-self-center d-flex justify-content-center align-items-center flex-shrink-0">
+                        <i class="fa fa-globe fa-2x" title="Share to web"/>
+                    </div>
+                    <div attrs="{'invisible': [('share_with_token', '=', False)]}"
+                         class="flex-grow-1 px-3">
+                        <div class="lead">Article published with token</div>
+                        <div>Anyone can view using token</div>
+                    </div>
+                     <div attrs="{'invisible': [('share_with_token', '=', True)]}" class="flex-grow-1 px-3">
+                        <div class="lead">Share with token</div>
+                        <div>Shared with token</div>
+                    </div>
+                    <div class="o_knowledge_share_toggle align-self-center pe-3"
+                         attrs="{'invisible': [('user_can_write', '=', False)]}"
+                         t-on-change="() => props.record.save()"> <!-- Propagate website_published directly --> 
+                        <field name="share_with_token" widget="boolean_toggle"/>
+                    </div>
+                </div>
+                <div class="px-3 my-2" attrs="{'invisible': [('share_with_token', '=', False)]}">
+                    <field name="token_article_url" widget="CopyClipboardChar" readonly="1"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
