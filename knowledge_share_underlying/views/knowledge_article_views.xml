@@ -1,0 +1,34 @@
+<odoo>
+    <record id="knowledge_article_view_form" model="ir.ui.view">
+        <field name="name">knowledge.article.view.form.inherit.website</field>
+        <field name="model">knowledge.article</field>
+        <field name="inherit_id" ref="knowledge.knowledge_article_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('dropdown-divider')]" position="before">
+                <field name="child_ids" invisible="1"/>
+                <div attrs="{'invisible': [('child_ids', '=', False)]}">
+                <div class="d-flex px-3"
+                     t-on-click="ev => ev.currentTarget.querySelector('.o_knowledge_share_toggle input')?.click()">
+                    <div class="o_knowledge_share_panel_icon align-self-center d-flex justify-content-center align-items-center flex-shrink-0">
+                        <i class="fa fa-book fa-2x" title="Share underlying articles"/>
+                    </div>
+                    <div attrs="{'invisible': [('share_underlying', '=', False)]}"
+                         class="flex-grow-1 px-3">
+                        <div class="lead">Underlying articles are shared</div>
+<!--                        <div>Anyone can view using token</div>-->
+                    </div>
+                     <div attrs="{'invisible': [('share_underlying', '=', True)]}" class="flex-grow-1 px-3">
+                        <div class="lead">Share underlying articles</div>
+                        <div>Underlying articles are shared</div>
+                    </div>
+                    <div class="o_knowledge_share_toggle align-self-center pe-3"
+                         attrs="{'invisible': [('user_can_write', '=', False)]}"
+                         t-on-change="() => props.record.save()"> <!-- Propagate website_published directly --> 
+                        <field name="share_underlying" widget="boolean_toggle"/>
+                    </div>
+                </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

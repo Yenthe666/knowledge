@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="articles_template_name" inherit_id="knowledge.articles_template_name">
+            <xpath expr="//a[@t-out='article.display_name']" position="attributes">
+                <attribute name="t-attf-href">/knowledge/article/{{str(article.id) + ('/'+article.access_token if article.share_with_token else '')}}</attribute>
+            </xpath>
+
+        </template>
+
+    </data>
+</odoo>

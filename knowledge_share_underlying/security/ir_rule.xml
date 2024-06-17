@@ -1,0 +1,6 @@
+<odoo>
+    <function model="ir.rule" name="write">
+        <value eval="[ref('website_knowledge.rule_knowledge_article_public_users_read')]"/>
+        <value eval="{'domain_force': '[\'|\', (\'website_published\', \'=\', True), (\'shared_by_ancestors\', \'=\', True)]'}"/>
+    </function>
+</odoo>

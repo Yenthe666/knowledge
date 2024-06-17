@@ -10,3 +10,12 @@ This option is ideal to share articles with multiple people where you do not wan
 For example: you write a knowledge article for your customer who has 100 employees. In this case you can share a link with token and the people internally can forward the knowledge article.<br/>
 This option is an easy toggle on the knowledge "Share" block:<br/>
 <img width="1275" alt="image" src="https://github.com/Yenthe666/knowledge/assets/6352350/7f0d7e1d-b848-4734-abda-905961424fb8">
+
+## knowledge_share_underlying
+This app adds support to share knowledge underlying articles.<br/>
+If you want to share one article (like a workspace) that has children, if you set it to share with underlying, then all children (down the tree) are shared too. <br/>
+
+## knowledge_share_underlying_with_token
+This app brings you the features of knowledge_share_with_token + knowledge_share_underlying combined.<br/>
+If you want to share one article with token (like a workspace) that has children, if you set it to share with underlying, then all children (down the tree) are shared too. <br/>
+They can be accessed by the same token as the ancestor. <br/>
