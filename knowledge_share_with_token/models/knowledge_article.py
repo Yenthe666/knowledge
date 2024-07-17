@@ -7,9 +7,11 @@ from odoo.tools import consteq
 class KnowledgeArticle(models.Model):
     _inherit = 'knowledge.article'
 
-    share_with_token =  fields.Boolean(
+    share_with_token = fields.Boolean(
         string="Share with token"
     )
+
+    share_child_articles = fields.Boolean(string="Share Related Articles")
 
     access_token = fields.Char(
         string='Access Token',

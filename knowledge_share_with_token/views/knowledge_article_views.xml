@@ -28,6 +28,21 @@
                 <div class="px-3 my-2" attrs="{'invisible': [('share_with_token', '=', False)]}">
                     <field name="token_article_url" widget="CopyClipboardChar" readonly="1"/>
                 </div>
+                <div class="d-flex px-3"
+                     t-on-click="ev => ev.currentTarget.querySelector('.o_knowledge_share_toggle input')?.click()">
+                    <div class="o_knowledge_share_panel_icon align-self-center d-flex justify-content-center align-items-center flex-shrink-0">
+                        <i class="fa fa-globe fa-2x" title="Share to web"/>
+                    </div>
+                    <div attrs="{'invisible': [('share_with_token', '=', False)]}" class="flex-grow-1 px-3">
+                        <div class="lead">Share Related Articles</div>
+                        <div>Related Articles will be also accessible.</div>
+                    </div>
+                    <div class="o_knowledge_share_toggle align-self-center pe-3"
+                         attrs="{'invisible': [('user_can_write', '=', False)]}"
+                         t-on-change="() => props.record.save()"> <!-- Propagate website_published directly -->
+                        <field name="share_child_articles" widget="boolean_toggle"/>
+                    </div>
+                </div>
             </xpath>
         </field>
     </record>
