@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+    <t t-extend="knowledge.articles_structure">
+        <t t-jquery="a.o_knowledge_article_structure_link"  t-operation="attributes">
+            <attribute name="t-if" value="!(article.share_with_token and article.access_token)"/>
+        </t>
+        <t t-jquery="a.o_knowledge_article_structure_link" t-operation="after">
+            <a t-if="article.share_with_token and article.access_token" t-attf-href="/knowledge/article/#{article.id}/#{article.access_token}" t-att-data-oe-nodeid="article.id"
+                class="d-block w-100 ps-1 border-0 o_knowledge_article_structure_link"
+                contenteditable="false" t-out="article.name">
+            </a>
+        </t>
+    </t>
+
+</templates>

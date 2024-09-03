@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_knowledge_article_token_tree_frontend" name="Website Knowledge Article Token Tree" inherit_id="website_knowledge.website_knowledge_article_tree_frontend">
+        <xpath expr="//section[1]" position="after">
+            <section t-if="token_articles">
+                <div class="o_section_header h4 mb-0">Token articles</div>
+                <ul class="o_tree o_tree_workspace m-0 px-0 py-2">
+                    <t t-call="knowledge.articles_template">
+                        <t t-set="articles" t-value="token_articles"/>
+                        <t t-set="articles_category" t-value="'portal_token'"/>
+                    </t>
+                </ul>
+            </section>
+        </xpath>
+    </template>
+    <template id="articles_template_name_token" name="Article Name Token" inherit_id="knowledge.articles_template_name">
+        <xpath expr='//div[@t-else]/a' position="attributes">
+            <attribute name="t-attf-href">#{'/knowledge/article/%s/%s' % (article.id, article.access_token) if articles_category == 'portal_token' and article.share_with_token else '/knowledge/article/%s' %(article.id)}</attribute>
+        </xpath>
+    </template>
+</odoo>
